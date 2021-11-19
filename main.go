@@ -1,53 +1,29 @@
 package main
 
 import (
-	"bufio"
-	"encoding/base64"
-	"fmt"
-	"os"
+    "bufio"
+    "fmt"
+    "os"
 )
 
 var (
-	scanner = bufio.NewScanner(os.Stdin)
+    scanner = bufio.NewScanner(os.Stdin)
 )
 
 func main() {
 
     fmt.Print("\033[H\033[2J") //clears terminal
-    fmt.Print("Would you like to encode (e) or decode (d): ")
+    fmt.Print("Would you like to use base64 (64) or base32 (32): ")
+
     scanner.Scan()
     input := scanner.Text()
-    
-    if input == "e" {
-	encode()
-    } else if input == "d" {
-	decode()
+
+    if input == "64" {
+	Bs64()
+    } else if input == "32" {
+	Bs32()
     } else {
 	fmt.Println("Dude, that wasn't an option.")
     }
 
-}
-
-func encode() {
-
-    fmt.Print("Enter what you would like to be encoded: ")
-    scanner.Scan()
-
-    input := scanner.Text()
-    Enc := base64.StdEncoding.EncodeToString([]byte(input))
-
-    fmt.Println("Your encoded text is:", Enc)
-
-}
-
-func decode() {
-
-    fmt.Print("Enter what you would like to be decoded: ")
-    scanner.Scan()
-
-    input := scanner.Text()
-    Dec, _ := base64.StdEncoding.DecodeString(input)
-
-    fmt.Println("Your decoded text is:", (string(Dec)))
-	
 }
