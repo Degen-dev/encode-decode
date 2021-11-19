@@ -1,4 +1,4 @@
-# Base64
+# Encode-Decode
 A very basic base64 and base32 encoder/decoder that I made in class.
 
 # Startup
