@@ -1,6 +1,7 @@
 package src
 
 import (
+  "strings"
   "os"
   "bufio"
 	"encoding/base32"
@@ -13,14 +14,14 @@ var (
 
 func Bs32() {
 
-	fmt.Print("Would you like to encode (e) or decode (d): ")
+	fmt.Print("Would you like to encode or decode: ")
 
 	scanner.Scan()
 	input := scanner.Text()
 
-	if input == "e" {
+	if input == strings.ToLower("encode") {
 		Bs32E()
-	} else if input == "d" {
+	} else if input == strings.ToLower("decode") {
 		Bs32D()
 	} else {
 		fmt.Println("Dude, that wasn't an option.")
