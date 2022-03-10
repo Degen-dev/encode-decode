@@ -22,10 +22,10 @@ func main() {
 
     switch string(input) {
         case "base64":
-			src.Bs64()
+		src.Bs64()
         case "base32":
-        	src.Bs32()
+        src.Bs32()
       	default:
-        	fmt.Println("Dude, that wasn't an option.")
-    	}
+        fmt.Println("Dude, that wasn't an option.")
+    }
 }
