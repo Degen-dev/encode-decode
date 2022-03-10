@@ -20,11 +20,11 @@ func Bs32() {
 
 	switch string(input) {
 		case "encode":
-		Bs32E()
+			Bs32E()
 		case "decode":
-		Bs32D()
+			Bs32D()
 		default:
-		fmt.Println("Dude, that wasn't an option.")
+			fmt.Println("Dude, that wasn't an option.")
 	}
 }
 

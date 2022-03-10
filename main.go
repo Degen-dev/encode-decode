@@ -21,11 +21,11 @@ func main() {
     input := strings.ToLower(scanner.Text())
 
     switch string(input) {
-        case "base64":
-		src.Bs64()
-        case "base32":
-        src.Bs32()
-      	default:
-        fmt.Println("Dude, that wasn't an option.")
+    	case "base64":
+			src.Bs64()
+    	case "base32":
+        	src.Bs32()
+    	default:
+        	fmt.Println("Dude, that wasn't an option.")
     }
 }

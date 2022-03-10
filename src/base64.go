@@ -14,11 +14,11 @@ func Bs64() {
 
 	switch string(input) {
 		case "encode":
-		encode()
+			encode()
 		case "decode":
-		decode()
+			decode()
 		default:
-		fmt.Println("Dude, that wasn't an option.")
+			fmt.Println("Dude, that wasn't an option.")
 	}
 }
 
