@@ -7,24 +7,21 @@ import (
 )
 
 func Bs64() {
-
 	fmt.Print("Would you like to encode or decode: ")
 
 	scanner.Scan()
-	input := scanner.Text()
+	input := strings.ToLower(scanner.Text())
 
-	if input == strings.ToLower("encode") {
+	if input == "encode" {
 		encode()
-	} else if input == strings.ToLower("decode") {
+	} else if input == "decode" {
 		decode()
 	} else {
 		fmt.Println("Dude, that wasn't an option.")
 	}
-
 }
 
 func encode() {
-
 	fmt.Print("Enter what you would like to be encoded: ")
 	scanner.Scan()
 
@@ -32,11 +29,9 @@ func encode() {
 	Enc := base64.StdEncoding.EncodeToString([]byte(input))
 
 	fmt.Println("Your encoded text is:", Enc)
-
 }
 
 func decode() {
-
 	fmt.Print("Enter what you would like to be decoded: ")
 	scanner.Scan()
 
@@ -48,5 +43,4 @@ func decode() {
 	if err != nil {
 		fmt.Println("Dude, you need to input base64.")
 	}
-
 }
