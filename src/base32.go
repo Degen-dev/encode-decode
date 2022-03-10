@@ -1,9 +1,9 @@
 package src
 
 import (
-  "strings"
-  "os"
-  "bufio"
+    "strings"
+    "os"
+    "bufio"
 	"encoding/base32"
 	"fmt"
 )
@@ -18,18 +18,19 @@ func Bs32() {
 	scanner.Scan()
 	input := strings.ToLower(scanner.Text())
 
-	if input == "encode" {
+	switch string(input) {
+		case "encode":
 		Bs32E()
-	} else if input == "decode" {
+		case "decode":
 		Bs32D()
-	} else {
+		default:
 		fmt.Println("Dude, that wasn't an option.")
 	}
 }
 
 func Bs32E() {
 	fmt.Print("Enter what you would like to be encoded: ")
-	scanner.Scan()
+	 scanner.Scan()
 
 	input := scanner.Text()
 	bs32Enc := base32.StdEncoding.EncodeToString([]byte(input))

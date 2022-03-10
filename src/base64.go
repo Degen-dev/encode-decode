@@ -1,22 +1,23 @@
 package src
 
 import (
-  "strings"
+    "strings"
 	"encoding/base64"
 	"fmt"
 )
 
 func Bs64() {
-	fmt.Print("Would you like to encode or decode: ")
+  	fmt.Print("Would you like to encode or decode: ")
 
 	scanner.Scan()
 	input := strings.ToLower(scanner.Text())
 
-	if input == "encode" {
+	switch string(input) {
+		case "encode":
 		encode()
-	} else if input == "decode" {
+		case "decode":
 		decode()
-	} else {
+		default:
 		fmt.Println("Dude, that wasn't an option.")
 	}
 }

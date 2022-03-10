@@ -19,12 +19,13 @@ func main() {
 
     scanner.Scan()
     input := strings.ToLower(scanner.Text())
-  
-    if input == "base64" {
-	      src.Bs64()
-    } else if input == "base32" {
-	      src.Bs32()
-    } else {
-	      fmt.Println("Dude, that wasn't an option.")
-    }
+
+    switch string(input) {
+        case "base64":
+			src.Bs64()
+        case "base32":
+        	src.Bs32()
+      	default:
+        	fmt.Println("Dude, that wasn't an option.")
+    	}
 }
