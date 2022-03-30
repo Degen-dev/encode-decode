@@ -14,11 +14,9 @@ var (
 
 func Bs32() {
 	fmt.Print("Would you like to encode or decode: ")
-
 	scanner.Scan()
-	input := strings.ToLower(scanner.Text())
 
-	switch string(input) {
+	switch string(strings.ToLower(scanner.Text())) {
 		case "encode":
 			Bs32E()
 		case "decode":
@@ -30,10 +28,9 @@ func Bs32() {
 
 func Bs32E() {
 	fmt.Print("Enter what you would like to be encoded: ")
-	 scanner.Scan()
+	scanner.Scan()
 
-	input := scanner.Text()
-	bs32Enc := base32.StdEncoding.EncodeToString([]byte(input))
+	bs32Enc := base32.StdEncoding.EncodeToString([]byte(scanner.Text()))
 
 	fmt.Println("Your encoded text is:", bs32Enc)
 }
@@ -42,8 +39,7 @@ func Bs32D() {
 	fmt.Print("Enter what you would like to be decoded: ")
 	scanner.Scan()
 
-	input := scanner.Text()
-	bs32Dec, err := base32.StdEncoding.DecodeString(input)
+	bs32Dec, err := base32.StdEncoding.DecodeString(scanner.Text())
 
 	fmt.Println("Your decoded text is:", string(bs32Dec))
 

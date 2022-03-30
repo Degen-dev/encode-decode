@@ -16,11 +16,9 @@ var (
 func main() {
     fmt.Print("\033[H\033[2J") //clears terminal
     fmt.Print("Would you like to use base64 or base32: ")
-
     scanner.Scan()
-    input := strings.ToLower(scanner.Text())
 
-    switch string(input) {
+    switch string(strings.ToLower(scanner.Text())) {
     	case "base64":
 			src.Bs64()
     	case "base32":
