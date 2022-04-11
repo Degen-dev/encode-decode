@@ -7,15 +7,15 @@
 package src
 
 import (
-    "strings"
-    "os"
-    "bufio"
+	"bufio"
 	"encoding/base32"
 	"fmt"
+	"os"
+	"strings"
 )
 
 var (
-    scanner = bufio.NewScanner(os.Stdin)
+	scanner = bufio.NewScanner(os.Stdin)
 )
 
 func Bs32() {
@@ -23,12 +23,12 @@ func Bs32() {
 	scanner.Scan()
 
 	switch string(strings.ToLower(scanner.Text())) {
-		case "encode":
-			Bs32E()
-		case "decode":
-			Bs32D()
-		default:
-			fmt.Println("Dude, that wasn't an option.")
+	case "encode":
+		Bs32E()
+	case "decode":
+		Bs32D()
+	default:
+		fmt.Println("Dude, that wasn't an option.")
 	}
 }
 

@@ -7,22 +7,22 @@
 package src
 
 import (
-    "strings"
 	"encoding/base64"
 	"fmt"
+	"strings"
 )
 
 func Bs64() {
-  	fmt.Print("Would you like to encode or decode: ")
+	fmt.Print("Would you like to encode or decode: ")
 	scanner.Scan()
 
 	switch string(strings.ToLower(scanner.Text())) {
-		case "encode":
-			encode()
-		case "decode":
-			decode()
-		default:
-			fmt.Println("Dude, that wasn't an option.")
+	case "encode":
+		encode()
+	case "decode":
+		decode()
+	default:
+		fmt.Println("Dude, that wasn't an option.")
 	}
 }
 
